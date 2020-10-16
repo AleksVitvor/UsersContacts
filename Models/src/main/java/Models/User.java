@@ -29,4 +29,19 @@ public class User {
     Set<Contact> contactSet;
     @Column(name="Role_Id")
     private int Role_Id;
+
+    @Column(name = "UserName")
+    private String UserName;
+
+    @Column(name = "Password")
+    private String Password;
+
+
+    public User(String firstName, String secondName, String patronymic, String userName, String password) {
+        FirstName = firstName;
+        SecondName = secondName;
+        Patronymic = patronymic;
+        UserName = userName;
+        Password = password;
+    }
 }

@@ -24,4 +24,10 @@ public class Contact {
             inverseJoinColumns = @JoinColumn(name = "User_Id")
     )
     private Set<User> userSet;
+
+    public Contact(String phoneNumber, User user)
+    {
+        this.PhoneNumber=phoneNumber;
+        this.user=user;
+    }
 }
