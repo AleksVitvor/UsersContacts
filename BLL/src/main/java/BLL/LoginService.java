@@ -2,10 +2,10 @@ package BLL;
 
 import Models.Contact;
 import Models.User;
-import ViewModels.UserVM;
+import ViewModels.UserRegistrationVM;
 
 public class LoginService {
-    public void Register(UserVM userInfo)
+    public void Register(UserRegistrationVM userInfo)
     {
         User user=new User(userInfo.getFirstName(),
                 userInfo.getSecondName(),
