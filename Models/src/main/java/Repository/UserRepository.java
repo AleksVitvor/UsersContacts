@@ -1,4 +1,4 @@
-package DAO;
+package Repository;
 
 public class UserRepository {
 }

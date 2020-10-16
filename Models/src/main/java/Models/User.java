@@ -27,6 +27,6 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "Contact_Id")
     )
     Set<Contact> contactSet;
-
-
+    @Column(name="Role_Id")
+    private int Role_Id;
 }
