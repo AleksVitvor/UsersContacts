@@ -12,22 +12,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
-@Controller
+@Controller(value="/user")
 public class UserController {
+    @Autowired
     private LoginService loginService;
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @Autowired
-    public UserController(LoginService service)
-    {
-        loginService=service;
-    }
+
 
     @RequestMapping(value = {"/register"}, method = RequestMethod.POST)
     public ModelAndView Register(FrontUserForLogging userForLogging)
     {
         ModelAndView modelAndView=new ModelAndView();
+        loginService.Register(userForLogging.toUserRegistration());
         return modelAndView;
     }
 }
