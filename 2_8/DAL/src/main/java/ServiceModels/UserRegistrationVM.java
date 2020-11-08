@@ -1,4 +1,4 @@
-package ViewModels;
+package ServiceModels;
 
 import com.sun.istack.internal.Nullable;
 

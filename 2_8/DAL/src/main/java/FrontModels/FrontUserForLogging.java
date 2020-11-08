@@ -1,6 +1,6 @@
 package FrontModels;
 
-import ViewModels.UserRegistrationVM;
+import ServiceModels.UserRegistrationVM;
 import com.sun.istack.internal.Nullable;
 import org.apache.commons.codec.digest.DigestUtils;
 
