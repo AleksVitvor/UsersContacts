@@ -46,7 +46,7 @@ public class LoginService {
         password=Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString();
         if(userRepository.existsByUserNameAndPassword(userName, password))
         {
-            return userRepository.findByUserNameAndAndPassword(userName, password).getId();
+            return userRepository.findByUserNameAndPassword(userName, password).getId();
         }
         return -1;
     }
