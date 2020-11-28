@@ -1,5 +1,6 @@
-package ServiceModels;
+package com.aleks._8.DAL.ServiceModels;
 
+import com.aleks._8.DAL.FrontModels.FrontUserForLogging;
 import com.sun.istack.internal.Nullable;
 
 public class UserRegistrationVM {
@@ -83,5 +84,17 @@ public class UserRegistrationVM {
         setPhoneNumber(phoneNumber);
         setUserName(userName);
         setPatronymic(patronymic);
+    }
+
+    public static UserRegistrationVM ToRegistrationVM(FrontUserForLogging user)
+    {
+        return new UserRegistrationVM(
+                user.getFirstName(),
+                user.getSecondName(),
+                user.getPassword(),
+                user.getPhoneNumber(),
+                user.getUserName(),
+                user.getPatronymic()
+        );
     }
 }

@@ -1,11 +1,10 @@
 package com.aleks._8.config;
 
 
-import Models.Role;
-import Models.User;
-import Repository.RolesRepository;
-import Repository.UserRepository;
-import Services.LoginService;
+import com.aleks._8.DAL.Models.Role;
+import com.aleks._8.DAL.Models.User;
+import com.aleks._8.DAL.Repository.RolesRepository;
+import com.aleks._8.DAL.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,7 +20,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public CustomUserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User userEntity = userService.findByUserName(username);
-        Role role=rolesRepository.findById(userEntity.getRole_Id());
+        Role role=rolesRepository.findById((long) userEntity.getRole_Id()).get();
         return CustomUserDetails.fromUserEntityToCustomUserDetails(userEntity, role);
     }
 }

@@ -1,8 +1,7 @@
 package com.aleks._8.config;
 
-import Models.Role;
-import Models.User;
-import Repository.RolesRepository;
+import com.aleks._8.DAL.Models.Role;
+import com.aleks._8.DAL.Models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

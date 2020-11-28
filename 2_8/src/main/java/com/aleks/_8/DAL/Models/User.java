@@ -1,7 +1,9 @@
-package Models;
+package com.aleks._8.DAL.Models;
 
+import com.aleks._8.DAL.Models.Contact;
 import com.google.common.hash.Hashing;
 import com.sun.istack.Nullable;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
 import java.nio.charset.StandardCharsets;
@@ -35,7 +37,7 @@ public class User {
     }
 
     public String getUserName() {
-        return UserName;
+        return Username;
     }
 
     public String getPassword() {
@@ -71,13 +73,11 @@ public class User {
     }
 
     public void setUserName(String userName) {
-        UserName = userName;
+        Username = userName;
     }
 
     public void setPassword(String password) {
-        Password = Hashing.sha256()
-                .hashString(password, StandardCharsets.UTF_8)
-                .toString();
+        Password = password;
     }
 
     @Id
@@ -104,7 +104,7 @@ public class User {
     private int Role_Id;
 
     @Column(name = "UserName")
-    private String UserName;
+    private String Username;
 
     @Column(name = "Password")
     private String Password;
@@ -114,8 +114,9 @@ public class User {
         FirstName = firstName;
         SecondName = secondName;
         Patronymic = patronymic;
-        UserName = userName;
+        Username = userName;
         Password = password;
+        Role_Id = 1;
     }
 
     public User() {

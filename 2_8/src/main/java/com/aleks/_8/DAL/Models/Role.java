@@ -1,4 +1,4 @@
-package Models;
+package com.aleks._8.DAL.Models;
 
 import javax.persistence.*;
 import java.util.Set;
