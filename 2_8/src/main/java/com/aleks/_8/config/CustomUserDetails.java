@@ -19,7 +19,7 @@ public class CustomUserDetails implements UserDetails {
     @Autowired
     public static CustomUserDetails fromUserEntityToCustomUserDetails(User userEntity, Role role) {
         CustomUserDetails c = new CustomUserDetails();
-        c.login = userEntity.getUserName();
+        c.login = userEntity.getUsername();
         c.password = userEntity.getPassword();
         c.grantedAuthorities = Collections.singletonList(new SimpleGrantedAuthority(role.getRole()));
         return c;

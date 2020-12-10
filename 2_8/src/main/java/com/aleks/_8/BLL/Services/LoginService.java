@@ -16,28 +16,17 @@ import java.nio.charset.StandardCharsets;
 @Service
 public class LoginService {
     private UserRepository userRepository;
-    private ContactRepository contactRepository;
-    private RolesRepository rolesRepository;
     @Autowired
-    public LoginService(UserRepository userRepository,
-                        ContactRepository contactRepository,
-                        RolesRepository rolesRepository)
+    public LoginService(UserRepository userRepository)
     {
         this.userRepository=userRepository;
-        this.contactRepository=contactRepository;
-        this.rolesRepository=rolesRepository;
     }
     public void Register(UserRegistrationVM userInfo)
     {
-        User user=new User(userInfo.getFirstName(),
-                userInfo.getSecondName(),
-                userInfo.getPatronymic(),
+        User user=new User(
                 userInfo.getUserName(),
                 userInfo.getPassword());
-        Contact contact=new Contact(userInfo.getPhoneNumber(),
-                user);
         userRepository.save(user);
-        contactRepository.save(contact);
     }
     public int Login(String userName, String password)
     {
@@ -56,7 +45,7 @@ public class LoginService {
     {
         if(userRepository.findByUserName(UserName).getPassword()==Password)
         {
-            return new UserNameOnly(userRepository.findByUserNameAndPassword(UserName, Password).getUserName());
+            return new UserNameOnly(userRepository.findByUserNameAndPassword(UserName, Password).getUsername());
         }
         return null;
     }

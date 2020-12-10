@@ -3,10 +3,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <modules>
-		<module>DAL</module>
-		<module>BLL</module>
-	</modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -79,15 +75,14 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.aleks</groupId>
-			<artifactId>DAL</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>30.0-jre</version>
 		</dependency>
 		<dependency>
-			<groupId>com.aleks</groupId>
-			<artifactId>BLL</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
