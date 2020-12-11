@@ -2,16 +2,12 @@
 using Front.Models;
 using Library.Filters;
 using Library.Responces;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Front.ViewModels
 {

@@ -2,6 +2,7 @@ package com.aleks._8.controllers;
 
 import com.aleks._8.BLL.Services.ContactService;
 import com.aleks._8.BLL.Services.UserService;
+import com.aleks._8.BLL.Validation.ContactValidator;
 import com.aleks._8.DAL.Filters.AddContactFilter;
 import com.aleks._8.DAL.Filters.AllContactsFilter;
 import com.aleks._8.DAL.Filters.DeleteContactFilter;
@@ -19,6 +20,8 @@ import java.util.Set;
 
 @RestController
 public class ContactController {
+    @Autowired
+    ContactValidator validator;
     @Autowired
     ContactService contactService;
     @Autowired
@@ -43,14 +46,17 @@ public class ContactController {
         );
     }
     @PutMapping(path = "/user/add_contact")
-    public void addContact(AddContactFilter filter)
-    {
-        userService.addContact(
-                jwtProvider.getLoginFromToken(filter.getToken()),
-                new Contact(filter.getContactName(),
-                        filter.getContactSurname(),
-                        filter.getContactPhoneNumber())
-        );
+    public void addContact(AddContactFilter filter) throws Exception {
+        if(validator.IsValid(filter)) {
+            userService.addContact(
+                    jwtProvider.getLoginFromToken(filter.getToken()),
+                    new Contact(filter.getContactName(),
+                            filter.getContactSurname(),
+                            filter.getContactPhoneNumber())
+            );
+        }
+        else
+            throw new Exception("Invalid add contact filter");
     }
 
     @PostMapping(path = "/user/update_contact")
