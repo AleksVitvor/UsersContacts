@@ -1,0 +1,45 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpAccessor
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <!--меню-->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Auth/Login" class="navbar-brand">Главная</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    @if (httpAccessor.HttpContext.Request.Cookies.ContainsKey("ROLE"))
+                    {
+                        @if (httpAccessor.HttpContext.Request.Cookies["ROLE"].Equals(System.Text.Encoding.UTF8.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes("ROLE_ADMIN")))))
+                        {
+                            <li><a href="~/Home/Users" class="navbar-brand">Administration</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--основной контент-->
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <form asp-controller="Home" asp-action="Exit">
+                <div>
+                    <input type="submit" value="Выйти" />
+                </div>
+            </form>
+            <p>© 2020 - Contacts</p>
+        </footer>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
