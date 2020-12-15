@@ -8,6 +8,14 @@ public class FrontUserForLogging {
     private String UserName;
     private String Password;
 
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public void setUserName(String userName) {
+        UserName = userName;
+    }
+
     public String getUserName() {
         return UserName;
     }

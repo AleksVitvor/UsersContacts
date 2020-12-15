@@ -6,7 +6,8 @@ import java.util.Set;
 @Entity
 @Table(name="roles")
 public class Role {
-    @javax.persistence.Id
+    @Id
+    @Column(name = "ROLE_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
 
@@ -26,17 +27,9 @@ public class Role {
         Role = role;
     }
 
-    @Column(name = "RoleType")
+    @Column(name = "ROLE_NAME")
     private String Role;
 
-    @OneToMany
-    private Set<User> Users;
-
-    public Set<User> getUsers() {
-        return Users;
-    }
-
-    public void setUsers(Set<User> users) {
-        Users = users;
-    }
+    public Role()
+    { }
 }

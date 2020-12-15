@@ -10,9 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findAll();
-    Optional<User> findById(Long id);
+public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(value = "Select u FROM User u where u.Username=:Username AND u.Password=:Password")
     User findByUserNameAndPassword(@Param("Username")String userName,
                                    @Param("Password") String password);

@@ -10,9 +10,9 @@ public class DeleteContactFilter {
         return token;
     }
 
-    private Long ContactId;
+    private int ContactId;
 
-    public Long getContactId() {
+    public int getContactId() {
         return ContactId;
     }
 }

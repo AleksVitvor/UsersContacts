@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class DeleteUserFilter {
-    private Long UserID;
+    private int UserID;
 
-    public Long getUserID() {
+    public int getUserID() {
         return UserID;
     }
 }

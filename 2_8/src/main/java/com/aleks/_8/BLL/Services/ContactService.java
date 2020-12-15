@@ -13,7 +13,7 @@ public class ContactService {
     public ContactService(ContactRepository contactRepository) {
         this.contactRepository = contactRepository;
     }
-    public void UpdateContact(Long Id, @org.jetbrains.annotations.NotNull Contact newContact)
+    public void UpdateContact(int Id, @org.jetbrains.annotations.NotNull Contact newContact)
     {
         Contact old = contactRepository.findById(Id).get();
         old.setName(newContact.getName());

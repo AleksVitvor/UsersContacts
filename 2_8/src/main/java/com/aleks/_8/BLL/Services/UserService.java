@@ -22,7 +22,7 @@ public class UserService {
         return userRepository.findByUserName(Username);
     }
     public void deleteContactFromUsersContacts(String Username,
-                                               Long ContactId)
+                                               int ContactId)
     {
         User user=userRepository.findByUserName(Username);
         Set<Contact> contactSet=user.getContactSet();
@@ -42,7 +42,7 @@ public class UserService {
         user.setContactSet(contacts);
         userRepository.save(user);
     }
-    public void deleteUser(Long Id)
+    public void deleteUser(int Id)
     {
         userRepository.deleteById(Id);
     }

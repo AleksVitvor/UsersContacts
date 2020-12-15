@@ -22,9 +22,9 @@ public class UpdateContactFilter {
         return ContactPhoneNumber;
     }
 
-    private Long ContactId;
+    private int ContactId;
 
-    public Long getContactId() {
+    public int getContactId() {
         return ContactId;
     }
 }
