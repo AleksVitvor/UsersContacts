@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataWork\DataWork.csproj" />
     <ProjectReference Include="..\Library\Library.csproj" />
   </ItemGroup>
 

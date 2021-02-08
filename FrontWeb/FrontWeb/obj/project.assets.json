@@ -2258,6 +2258,20 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
+      "DataWork/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Library": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.2"
+        },
+        "compile": {
+          "bin/placeholder/DataWork.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataWork.dll": {}
+        }
+      },
       "Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7615,6 +7629,11 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
+    "DataWork/1.0.0": {
+      "type": "project",
+      "path": "../DataWork/DataWork.csproj",
+      "msbuildProject": "../DataWork/DataWork.csproj"
+    },
     "Library/1.0.0": {
       "type": "project",
       "path": "../Library/Library.csproj",
@@ -7623,6 +7642,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "DataWork >= 1.0.0",
       "Library >= 1.0.0",
       "Microsoft.AspNet.Mvc >= 5.2.7",
       "Microsoft.EntityFrameworkCore >= 5.0.2",
@@ -7663,6 +7683,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj": {
+              "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj"
+            },
             "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
               "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj"
             }
