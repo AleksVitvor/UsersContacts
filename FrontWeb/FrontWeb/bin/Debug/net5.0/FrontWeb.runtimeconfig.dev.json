@@ -2,7 +2,8 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\avitv\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\avitv\\.nuget\\packages"
+      "C:\\Users\\avitv\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }

@@ -4,6 +4,73 @@
     "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj": {}
   },
   "projects": {
+    "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj",
+        "projectName": "DataWork",
+        "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj",
+        "packagesPath": "C:\\Users\\avitv\\.nuget\\packages\\",
+        "outputPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\avitv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
+                "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,8 +95,12 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net50": {
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {
+              "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj": {
+                "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj"
+              },
               "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
                 "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj"
               }
@@ -43,7 +114,8 @@
         }
       },
       "frameworks": {
-        "net50": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.AspNet.Mvc": {
               "target": "Package",
@@ -51,17 +123,17 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.1, )"
+              "version": "[5.0.2, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -72,12 +144,25 @@
               "version": "[5.0.0-alpha.2, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win7-x86": {
-          "#import": []
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -105,7 +190,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net50": {
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -116,7 +202,8 @@
         }
       },
       "frameworks": {
-        "net50": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -135,7 +222,22 @@
               "version": "[5.0.0-alpha.2, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
