@@ -27,15 +27,7 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactSurname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
+            @Html.PartialAsync("ContactPartial", item).Result
             <td>
                 @Html.ActionLink("Delete", "DeleteContact", new { id = item.ContactId })
                 @Html.ActionLink("Update", "UpdateContact", new { id = item.ContactId })

@@ -284,3 +284,4 @@ D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\FrontWeb\bin\Debug\net5.0\System.
 D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\FrontWeb\obj\Debug\net5.0\Razor\Views\Home\UpdateContact.cshtml.g.cs
 D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\FrontWeb\bin\Debug\net5.0\DataWork.dll
 D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\FrontWeb\bin\Debug\net5.0\DataWork.pdb
+D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\FrontWeb\obj\Debug\net5.0\Razor\Views\Home\ContactPartial.cshtml.g.cs

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontWeb", "FrontWeb\FrontW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{EB612927-1250-41AC-A6BE-782A6B9FE2F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataWork", "DataWork\DataWork.csproj", "{195643D0-D89B-4FA0-8361-01F27038D9AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataWork", "DataWork\DataWork.csproj", "{195643D0-D89B-4FA0-8361-01F27038D9AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

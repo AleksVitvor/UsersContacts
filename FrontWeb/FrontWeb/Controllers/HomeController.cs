@@ -24,7 +24,7 @@ namespace FrontWeb.Controllers
             {
                 string Id = Request.Cookies["Id"];
                 int id = Int32.Parse(Id);
-                var contacts = _unitOfWork.userRepository.GetUser(u => u.UserId == id).Contacts.AsEnumerable();
+                var contacts = _unitOfWork.userRepository.GetUser(u => u.UserId == id).Contacts.AsEnumerable().OrderBy(x => x.ContactSurname);
                 return View(contacts);
             }
             else
