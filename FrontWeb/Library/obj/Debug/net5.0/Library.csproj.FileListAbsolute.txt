@@ -22,3 +22,15 @@ D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.
 D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.dll
 D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\ref\Library.dll
 D:\3_Course\Servers_3_2\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.pdb
+D:\MyPrograms\UsersContacts\FrontWeb\Library\bin\Debug\net5.0\Library.deps.json
+D:\MyPrograms\UsersContacts\FrontWeb\Library\bin\Debug\net5.0\Library.dll
+D:\MyPrograms\UsersContacts\FrontWeb\Library\bin\Debug\net5.0\ref\Library.dll
+D:\MyPrograms\UsersContacts\FrontWeb\Library\bin\Debug\net5.0\Library.pdb
+D:\MyPrograms\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.csprojAssemblyReference.cache
+D:\MyPrograms\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyPrograms\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.AssemblyInfoInputs.cache
+D:\MyPrograms\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.AssemblyInfo.cs
+D:\MyPrograms\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.csproj.CoreCompileInputs.cache
+D:\MyPrograms\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.dll
+D:\MyPrograms\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\ref\Library.dll
+D:\MyPrograms\UsersContacts\FrontWeb\Library\obj\Debug\net5.0\Library.pdb

@@ -36,7 +36,7 @@ namespace FrontWeb.Controllers
         {
             if (Request.Cookies.ContainsKey("Role"))
             {
-                if (Request.Cookies["ROLE"].Equals(System.Text.Encoding.UTF8.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes("ROLE_ADMIN")))))
+                if (Request.Cookies["ROLE"].Equals(System.Text.Encoding.Default.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.Default.GetBytes("ROLE_ADMIN")))))
                 {
                     return View(_unitOfWork.userRepository.GetUsers());
                 }
@@ -50,7 +50,7 @@ namespace FrontWeb.Controllers
         {
             if (Request.Cookies.ContainsKey("Role"))
             {
-                if (Request.Cookies["ROLE"].Equals(System.Text.Encoding.UTF8.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes("ROLE_ADMIN")))))
+                if (Request.Cookies["ROLE"].Equals(System.Text.Encoding.Default.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.Default.GetBytes("ROLE_ADMIN")))))
                 {
                     _unitOfWork.contactsRepository.RemoveRange(_unitOfWork.userRepository.GetUser(u => u.UserId == id).Contacts.AsEnumerable());
                     _unitOfWork.contactsRepository.Save();

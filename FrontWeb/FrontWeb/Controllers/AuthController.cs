@@ -3,7 +3,6 @@ using Library.Context.Models;
 using Library.Context.Services;
 using Library.FrontModels;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -55,11 +54,11 @@ namespace FrontWeb.Controllers
                 Response.Cookies.Delete("ROLE");
             }
             Service service = new Service(contextDB);
-            User user=service.Auth(authLogin);
+            User user = service.Auth(authLogin);
             if (user != null)
             {
                 Response.Cookies.Append("ROLE",
-                    Encoding.UTF8.GetString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(user.Role.RoleName))));
+                    Encoding.Default.GetString(SHA256.Create().ComputeHash(Encoding.Default.GetBytes(user.Role.RoleName))));
                 Response.Cookies.Append("Id", user.UserId.ToString());
                 return new RedirectResult("/Home/Contacts");
             }

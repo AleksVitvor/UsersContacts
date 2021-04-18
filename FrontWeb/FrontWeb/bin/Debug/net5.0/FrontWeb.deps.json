@@ -9,7 +9,15 @@
       "DEBUG",
       "NET",
       "NET5_0",
-      "NETCOREAPP"
+      "NETCOREAPP",
+      "NET5_0_OR_GREATER",
+      "NETCOREAPP1_0_OR_GREATER",
+      "NETCOREAPP1_1_OR_GREATER",
+      "NETCOREAPP2_0_OR_GREATER",
+      "NETCOREAPP2_1_OR_GREATER",
+      "NETCOREAPP2_2_OR_GREATER",
+      "NETCOREAPP3_0_OR_GREATER",
+      "NETCOREAPP3_1_OR_GREATER"
     ],
     "languageVersion": "9.0",
     "platform": "",
@@ -31,6 +39,7 @@
           "Microsoft.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore.Proxies": "5.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.2",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.13",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.1",
           "Pomelo.EntityFrameworkCore.MySql": "5.0.0-alpha.2",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -829,6 +838,7 @@
       "Microsoft.Extensions.Primitives/5.0.0": {},
       "Microsoft.NETCore.Platforms/2.1.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.13": {},
       "Microsoft.VisualStudio.Web.CodeGeneration/5.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
@@ -1149,7 +1159,11 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Collections.Immutable/5.0.0": {},
+      "System.Collections.Immutable/5.0.0": {
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
+        }
+      },
       "System.Collections.NonGeneric/4.3.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.3.0",
@@ -1176,7 +1190,11 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.ComponentModel.Annotations/5.0.0": {},
+      "System.ComponentModel.Annotations/5.0.0": {
+        "compile": {
+          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
+        }
+      },
       "System.ComponentModel.Primitives/4.3.0": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -1610,7 +1628,11 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Reflection.Metadata/5.0.0": {},
+      "System.Reflection.Metadata/5.0.0": {
+        "compile": {
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {}
+        }
+      },
       "System.Reflection.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.2",
@@ -3867,6 +3889,13 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.10.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HWRH5pClal37WMKb0kV2JtnNKUEyQk8kJDdBz0M0fn9hKeU2KW8wdxkxeBNaumGQzHibZqSRofkeeayfpsMaKA==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.10.13",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.10.13.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Web.CodeGeneration/5.0.1": {
       "type": "package",

@@ -18,19 +18,20 @@ namespace Library.Context.Services
         }
         public void Register(FrontUserForLogging userForLogging)
         {
-            app.Users.Add(
-                new User()
-                {
-                    Username = userForLogging.UserName,
-                    Password = Encoding.UTF8.GetString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(userForLogging.Password))), 
-                    RoleId=1
-                });
+            var user = new User()
+            {
+                Username = userForLogging.UserName,
+                Password = Encoding.Default.GetString(SHA256.Create().ComputeHash(Encoding.Default.GetBytes(userForLogging.Password))),
+                RoleId = 1
+            };
+
+            app.Users.Add(user);
             app.SaveChanges();
         }
         public User Auth(AuthLogin login)
         {
             return app.Users.FirstOrDefault(u => u.Username == login.UserName
-                && u.Password == Encoding.UTF8.GetString(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(login.Password))));
+                && u.Password == Encoding.Default.GetString(SHA256.Create().ComputeHash(Encoding.Default.GetBytes(login.Password))));
         }
         public void CreateContact(int userId, Contact contact)
         {

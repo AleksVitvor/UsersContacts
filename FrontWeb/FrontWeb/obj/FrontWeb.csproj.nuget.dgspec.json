@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj": {}
+    "D:\\MyPrograms\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj": {}
   },
   "projects": {
-    "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj": {
+    "D:\\MyPrograms\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj",
+        "projectUniqueName": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj",
         "projectName": "DataWork",
-        "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj",
-        "packagesPath": "C:\\Users\\avitv\\.nuget\\packages\\",
-        "outputPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\obj\\",
+        "projectPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj",
+        "packagesPath": "C:\\Users\\vitvo\\.nuget\\packages\\",
+        "outputPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\DataWork\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\avitv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vitvo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
-                "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj"
+              "D:\\MyPrograms\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
+                "projectPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\Library\\Library.csproj"
               }
             }
           }
@@ -67,24 +64,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj": {
+    "D:\\MyPrograms\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj",
+        "projectUniqueName": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj",
         "projectName": "FrontWeb",
-        "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj",
-        "packagesPath": "C:\\Users\\avitv\\.nuget\\packages\\",
-        "outputPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\FrontWeb\\obj\\",
+        "projectPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\FrontWeb\\FrontWeb.csproj",
+        "packagesPath": "C:\\Users\\vitvo\\.nuget\\packages\\",
+        "outputPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\FrontWeb\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\avitv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vitvo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,11 +92,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj": {
-                "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj"
+              "D:\\MyPrograms\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj": {
+                "projectPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\DataWork\\DataWork.csproj"
               },
-              "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
-                "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj"
+              "D:\\MyPrograms\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
+                "projectPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\Library\\Library.csproj"
               }
             }
           }
@@ -135,6 +129,10 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.13, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.1, )"
@@ -162,24 +160,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
+    "D:\\MyPrograms\\UsersContacts\\FrontWeb\\Library\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj",
+        "projectUniqueName": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\Library\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\Library.csproj",
-        "packagesPath": "C:\\Users\\avitv\\.nuget\\packages\\",
-        "outputPath": "D:\\3_Course\\Servers_3_2\\UsersContacts\\FrontWeb\\Library\\obj\\",
+        "projectPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\vitvo\\.nuget\\packages\\",
+        "outputPath": "D:\\MyPrograms\\UsersContacts\\FrontWeb\\Library\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\avitv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vitvo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -237,7 +232,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

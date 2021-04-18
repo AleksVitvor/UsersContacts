@@ -18,7 +18,7 @@
                 <ul class="nav navbar-nav">
                     @if (httpAccessor.HttpContext.Request.Cookies.ContainsKey("ROLE"))
                     {
-                        @if (httpAccessor.HttpContext.Request.Cookies["ROLE"].Equals(System.Text.Encoding.UTF8.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.UTF8.GetBytes("ROLE_ADMIN")))))
+                        @if (httpAccessor.HttpContext.Request.Cookies["ROLE"].Equals(System.Text.Encoding.Default.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.Default.GetBytes("ROLE_ADMIN")))))
                         {
                             <li><a href="~/Home/Users" class="navbar-brand">Administration</a></li>
                         }
