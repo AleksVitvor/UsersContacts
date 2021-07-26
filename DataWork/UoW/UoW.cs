@@ -1,6 +1,5 @@
 ﻿using DataWork.Repository;
 using Library.Context;
-using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace DataWork.UoW
