@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Library.Context.Models
+﻿namespace Library.Context.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     [Table("users")]
     public class User
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("USER_ID")]
         public int UserId { get; set; }
+        
         [Required]
         [Column("USER_USERNAME")]
         public string Username { get; set; }
+
         [Required]
         [Column("USER_PASSWORD")]
         public string Password { get; set; }
+
         [Required]
         [Column("ROLE_ID")]
         [ForeignKey("Role")]

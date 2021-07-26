@@ -1,21 +1,20 @@
-﻿using Library.Context.Models;
-using Library.FrontModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Library.Context.Services
+﻿namespace Library.Context.Services
 {
-    public class Service
+    using Library.Context.Models;
+    using Library.FrontModels;
+    using System.Linq;
+    using System.Security.Cryptography;
+    using System.Text;
+
+    public class UserService : IUserService
     {
-        AppContextDB app;
-        public Service(AppContextDB contextDB)
+        readonly AppContextDB context;
+
+        public UserService(AppContextDB contextDB)
         {
-            app = contextDB;
+            context = contextDB;
         }
+
         public void Register(FrontUserForLogging userForLogging)
         {
             var user = new User()
@@ -25,19 +24,21 @@ namespace Library.Context.Services
                 RoleId = 1
             };
 
-            app.Users.Add(user);
-            app.SaveChanges();
+            context.Users.Add(user);
+            context.SaveChanges();
         }
+
         public User Auth(AuthLogin login)
         {
-            return app.Users.FirstOrDefault(u => u.Username == login.UserName
+            return context.Users.FirstOrDefault(u => u.Username == login.UserName
                 && u.Password == Encoding.Default.GetString(SHA256.Create().ComputeHash(Encoding.Default.GetBytes(login.Password))));
         }
+
         public void CreateContact(int userId, Contact contact)
         {
             contact.UserID = userId;
-            app.Contacts.Add(contact);
-            app.SaveChanges();
+            context.Contacts.Add(contact);
+            context.SaveChanges();
         }
     }
 }

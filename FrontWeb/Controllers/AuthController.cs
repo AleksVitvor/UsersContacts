@@ -1,20 +1,21 @@
-﻿using Library.Context;
-using Library.Context.Models;
-using Library.Context.Services;
-using Library.FrontModels;
-using Microsoft.AspNetCore.Mvc;
-using System.Security.Cryptography;
-using System.Text;
-
-namespace FrontWeb.Controllers
+﻿namespace FrontWeb.Controllers
 {
+    using Library.Context.Models;
+    using Library.Context.Services;
+    using Library.FrontModels;
+    using Microsoft.AspNetCore.Mvc;
+    using System.Security.Cryptography;
+    using System.Text;
+
     public class AuthController : Controller
     {
-        private AppContextDB contextDB;
-        public AuthController(AppContextDB appContext)
+        private readonly IUserService userService;
+
+        public AuthController(IUserService userService)
         {
-            contextDB = appContext;
+            this.userService = userService;
         }
+
         [HttpGet]
         public ActionResult Login()
         {
@@ -42,8 +43,8 @@ namespace FrontWeb.Controllers
             {
                 Response.Cookies.Delete("ROLE");
             }
-            Service service = new Service(contextDB);
-            service.Register(userForLogging);
+
+            userService.Register(userForLogging);
             return new RedirectResult("/Auth/Login");
         }
         [HttpPost]
@@ -53,8 +54,9 @@ namespace FrontWeb.Controllers
             {
                 Response.Cookies.Delete("ROLE");
             }
-            Service service = new Service(contextDB);
-            User user = service.Auth(authLogin);
+
+            User user = userService.Auth(authLogin);
+
             if (user != null)
             {
                 Response.Cookies.Append("ROLE",
@@ -63,7 +65,9 @@ namespace FrontWeb.Controllers
                 return new RedirectResult("/Home/Contacts");
             }
             else
+            {
                 return new RedirectResult("/Auth/Login");
+            }
         }
     }
 }

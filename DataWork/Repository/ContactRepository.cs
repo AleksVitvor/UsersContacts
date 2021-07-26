@@ -1,13 +1,11 @@
-﻿using Library.Context.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataWork.Repository
+﻿namespace DataWork.Repository
 {
+    using Library.Context.Models;
+    using Microsoft.EntityFrameworkCore;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class ContactRepository : IContactsRepository
     {
         private readonly DbContext context;
@@ -18,6 +16,7 @@ namespace DataWork.Repository
             this.context = context;
             set = this.context.Set<Contact>();
         }
+
         public Contact Get(Func<Contact, bool> predicate)
         {
             return set.FirstOrDefault(predicate);

@@ -1,22 +1,23 @@
-﻿using DataWork.UoW;
-using Library.Context;
-using Library.Context.Models;
-using Library.Context.Services;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
-
-namespace FrontWeb.Controllers
+﻿namespace FrontWeb.Controllers
 {
+    using DataWork.UoW;
+    using Library.Context.Models;
+    using Library.Context.Services;
+    using Microsoft.AspNetCore.Mvc;
+    using System;
+    using System.Linq;
+
     public class HomeController : Controller
     {
-        private IUoW _unitOfWork;
-        private AppContextDB contextDB;
-        public HomeController(IUoW uoW, AppContextDB context)
+        private readonly IUoW _unitOfWork;
+        private readonly IUserService userService;
+
+        public HomeController(IUoW uoW, IUserService userService)
         {            
             _unitOfWork = uoW;
-            contextDB = context;
+            this.userService = userService;
         }
+
         [HttpGet]
         public IActionResult Contacts()
         {
@@ -28,7 +29,9 @@ namespace FrontWeb.Controllers
                 return View(contacts);
             }
             else
+            {
                 return new RedirectResult("/Auth/Login");
+            }
         }
 
         [HttpGet]
@@ -43,8 +46,11 @@ namespace FrontWeb.Controllers
                 return new RedirectResult("/Auth/Login");
             }
             else
+            {
                 return new RedirectResult("/Auth/Login");
+            }
         }
+
         [HttpGet]
         public IActionResult DeleteUser(int id)
         {
@@ -61,7 +67,9 @@ namespace FrontWeb.Controllers
                 return new RedirectResult("/Auth/Login");
             }
             else
+            {
                 return new RedirectResult("/Auth/Login");
+            }
         }
         
         [HttpGet]
@@ -72,9 +80,12 @@ namespace FrontWeb.Controllers
                 return View();
             }
             else
+            {
                 return new RedirectResult("/Auth/Login");
+            }
             
         }
+
         [HttpPost]
         public IActionResult CreateContact(Contact contact)
         {
@@ -82,13 +93,15 @@ namespace FrontWeb.Controllers
             {
                 string Id = Request.Cookies["Id"];
                 int id = Int32.Parse(Id);
-                Service service = new Service(contextDB);
-                service.CreateContact(id, contact);
+                userService.CreateContact(id, contact);
                 return new RedirectResult("/Home/Contacts");
             }
             else
+            {
                 return new RedirectResult("/Auth/Login");
+            }
         }
+
         [HttpGet]
         public IActionResult DeleteContact(int id)
         {
@@ -96,6 +109,7 @@ namespace FrontWeb.Controllers
             _unitOfWork.contactsRepository.Save();
             return new RedirectResult("/Home/Contacts");
         }
+
         [HttpPost]
         public IActionResult Exit()
         {

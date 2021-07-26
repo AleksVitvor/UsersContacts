@@ -1,8 +1,8 @@
-﻿using Library.Context.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace Library.Context
+﻿namespace Library.Context
 {
+    using Library.Context.Models;
+    using Microsoft.EntityFrameworkCore;
+
     public class AppContextDB:DbContext
     {
         public DbSet<Contact> Contacts { get; set; }

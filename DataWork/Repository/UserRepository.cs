@@ -1,11 +1,12 @@
-﻿using Library.Context.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace DataWork.Repository
+﻿namespace DataWork.Repository
 {
+    using Library.Context.Models;
+    using Microsoft.EntityFrameworkCore;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+
     public class UserRepository : IUserRepository
     {
         private readonly DbContext context;
@@ -16,6 +17,7 @@ namespace DataWork.Repository
             this.context = context;
             set = this.context.Set<User>();
         }
+
         public User GetUser(Func<User, bool> predicate)
         {
             return set.FirstOrDefault(predicate);

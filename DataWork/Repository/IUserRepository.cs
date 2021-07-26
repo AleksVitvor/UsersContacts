@@ -1,12 +1,10 @@
-﻿using Library.Context.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataWork.Repository
+﻿namespace DataWork.Repository
 {
+    using Library.Context.Models;
+    using System;
+    using System.Collections.Generic;
+
+
     public interface IUserRepository : IDisposable
     {
         IEnumerable<User> GetUsers();

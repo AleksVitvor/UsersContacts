@@ -9,24 +9,33 @@
 </head>
 <body>
     <!--меню-->
-    <nav class="navbar navbar-inverse">
-        <div class="container">
-            <div>
-                <ul class="nav navbar-nav">
-                    <li><a href="~/Auth/Login" class="navbar-brand">Главная</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    @if (httpAccessor.HttpContext.Request.Cookies.ContainsKey("ROLE"))
-                    {
-                        @if (httpAccessor.HttpContext.Request.Cookies["ROLE"].Equals(System.Text.Encoding.Default.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.Default.GetBytes("ROLE_ADMIN")))))
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Contacts">User Contacts</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        @if (httpAccessor.HttpContext.Request.Cookies.ContainsKey("ROLE"))
                         {
-                            <li><a href="~/Home/Users" class="navbar-brand">Administration</a></li>
+                            @if (httpAccessor.HttpContext.Request.Cookies["ROLE"].Equals(System.Text.Encoding.Default.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.Default.GetBytes("ROLE_ADMIN")))))
+                            {
+                                <li>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Users">Administration</a>
+                                </li>
+                            }
                         }
-                    }
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
     <!--основной контент-->
     <div class="container body-content">
         @RenderBody()
@@ -34,10 +43,11 @@
         <footer>
             <form asp-controller="Home" asp-action="Exit">
                 <div>
-                    <input type="submit" value="Выйти" />
+                    <input type="submit" value="Log out" />
                 </div>
             </form>
-            <p>© 2020 - Contacts</p>
+            <br />
+            <p>© @DateTime.Now.Year - Contacts</p>
         </footer>
     </div>
     @RenderSection("Scripts", required: false)

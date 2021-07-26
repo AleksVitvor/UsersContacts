@@ -1,5 +1,6 @@
 using DataWork.UoW;
 using Library.Context;
+using Library.Context.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,6 +27,7 @@ namespace FrontWeb
             services.AddDbContext<AppContextDB>(options =>
                     options.UseLazyLoadingProxies().UseMySql(connection, ServerVersion.AutoDetect(connection)));
             services.AddScoped<IUoW, UoW>();
+            services.AddTransient<IUserService, UserService>();
             services.AddControllersWithViews();
             services.AddHttpClient();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

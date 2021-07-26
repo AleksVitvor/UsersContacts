@@ -1,9 +1,9 @@
-﻿using Library.Context.Models;
-using System;
-using System.Collections.Generic;
-
-namespace DataWork.Repository
+﻿namespace DataWork.Repository
 {
+    using Library.Context.Models;
+    using System;
+    using System.Collections.Generic;
+
     public interface IContactsRepository : IDisposable
     {
         void RemoveRange(IEnumerable<Contact> contacts);

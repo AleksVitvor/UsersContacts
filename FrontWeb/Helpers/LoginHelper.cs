@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Html;
-using System.Web.Mvc;
-
-namespace FrontWeb.Helpers
+﻿namespace FrontWeb.Helpers
 {
+    using Microsoft.AspNetCore.Html;
+    using System.Web.Mvc;
+
     public static class LoginHelper
     {
         public static HtmlString CreateLogin()
