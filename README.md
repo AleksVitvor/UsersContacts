@@ -15,6 +15,6 @@ Example: You shouldn't provide fixes for code style and validation in one branch
 5. Create MRs for each branch and provide them to the mentor for review.
 # Requirements
 1. Use your own database
-2. This project uses MySQL as a database, please, don't change it 
+2. This project uses MS SQL Server as a database, please, don't change it 
 3. Use LINQ (this will make your queries database independent)
 4. All new/updated queries should be provided via Notes for ticket in file with C# and SQL code

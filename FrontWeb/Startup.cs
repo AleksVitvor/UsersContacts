@@ -25,7 +25,7 @@ namespace FrontWeb
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppContextDB>(options =>
-                    options.UseLazyLoadingProxies().UseMySql(connection, ServerVersion.AutoDetect(connection)));
+                    options.UseLazyLoadingProxies().UseSqlServer(connection));
             services.AddScoped<IUoW, UoW>();
             services.AddTransient<IUserService, UserService>();
             services.AddControllersWithViews();

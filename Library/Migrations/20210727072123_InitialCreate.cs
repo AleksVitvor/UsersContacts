@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Library.Migrations
 {
@@ -12,8 +11,8 @@ namespace Library.Migrations
                 columns: table => new
                 {
                     ROLE_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    ROLE_NAME = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ROLE_NAME = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,9 +24,9 @@ namespace Library.Migrations
                 columns: table => new
                 {
                     USER_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    USER_USERNAME = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
-                    USER_PASSWORD = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    USER_USERNAME = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    USER_PASSWORD = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ROLE_ID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -46,10 +45,10 @@ namespace Library.Migrations
                 columns: table => new
                 {
                     CONTACT_ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CONTACT_NAME = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
-                    CONTACT_SURNAME = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    CONTACT_PHONE = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: false),
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CONTACT_NAME = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CONTACT_SURNAME = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CONTACT_PHONE = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     USER_ID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -62,6 +61,16 @@ namespace Library.Migrations
                         principalColumn: "USER_ID",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "roles",
+                columns: new[] { "ROLE_ID", "ROLE_NAME" },
+                values: new object[] { 1, "ROLE_USER" });
+
+            migrationBuilder.InsertData(
+                table: "roles",
+                columns: new[] { "ROLE_ID", "ROLE_NAME" },
+                values: new object[] { 2, "ROLE_ADMIN" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_contacts_USER_ID",

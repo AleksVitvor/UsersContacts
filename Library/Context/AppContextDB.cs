@@ -15,5 +15,22 @@
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.LogTo(message => Debug.WriteLine(message));
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Role>().HasData(new Role[] 
+            {
+                new Role
+                    {
+                        RoleId = 1,
+                        RoleName = "ROLE_USER"
+                    },
+                new Role
+                    {
+                        RoleId = 2,
+                        RoleName = "ROLE_ADMIN"
+                    }
+            });
+        }
     }
 }

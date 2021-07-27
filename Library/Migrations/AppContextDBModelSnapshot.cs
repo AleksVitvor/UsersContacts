@@ -2,6 +2,7 @@
 using Library.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Library.Migrations
@@ -13,28 +14,30 @@ namespace Library.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.2");
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("ProductVersion", "5.0.8")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Library.Context.Models.Contact", b =>
                 {
                     b.Property<int>("ContactId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("CONTACT_ID");
+                        .HasColumnName("CONTACT_ID")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ContactName")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CONTACT_NAME");
 
                     b.Property<string>("ContactSurname")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CONTACT_SURNAME");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("CONTACT_PHONE");
 
                     b.Property<int>("UserID")
@@ -53,16 +56,29 @@ namespace Library.Migrations
                     b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ROLE_ID");
+                        .HasColumnName("ROLE_ID")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("RoleName")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("ROLE_NAME");
 
                     b.HasKey("RoleId");
 
                     b.ToTable("roles");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            RoleName = "ROLE_USER"
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            RoleName = "ROLE_ADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Library.Context.Models.User", b =>
@@ -70,11 +86,12 @@ namespace Library.Migrations
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("USER_ID");
+                        .HasColumnName("USER_ID")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("USER_PASSWORD");
 
                     b.Property<int>("RoleId")
@@ -83,7 +100,7 @@ namespace Library.Migrations
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("USER_USERNAME");
 
                     b.HasKey("UserId");
