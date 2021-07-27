@@ -21,7 +21,7 @@ Example: You shouldn't provide fixes for code style and validation in one branch
 # Requirements
 1. Use your own database  
 You should change connection string  
-Connection string should apply for this patter: Data Source=# "Server Name";Initial Catalog=# "Database name";Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;  
+Connection string should apply for this patter: Data Source="Server Name";Initial Catalog="Database name";Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;  
 If database not exists, it'll be created by migration  
 2. This project uses MS SQL Server as a database, please, don't change it   
 3. Use LINQ (this will make your queries database independent)  
