@@ -1,4 +1,5 @@
 ﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpAccessor
+@inject Library.Context.Services.ICryptoService cryptoService
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (httpAccessor.HttpContext.Request.Cookies.ContainsKey("ROLE"))
                         {
-                            @if (httpAccessor.HttpContext.Request.Cookies["ROLE"].Equals(System.Text.Encoding.Default.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.Default.GetBytes("ROLE_ADMIN")))))
+                            @if (httpAccessor.HttpContext.Request.Cookies["ROLE"].Equals(cryptoService.SHA256GetHash("ROLE_ADMIN")))
                             {
                                 <li>
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Users">Administration</a>

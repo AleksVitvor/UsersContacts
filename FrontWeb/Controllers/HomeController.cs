@@ -11,11 +11,13 @@
     {
         private readonly IUoW _unitOfWork;
         private readonly IUserService userService;
+        private readonly ICryptoService cryptoService;
 
-        public HomeController(IUoW uoW, IUserService userService)
+        public HomeController(IUoW uoW, IUserService userService, ICryptoService cryptoService)
         {            
             _unitOfWork = uoW;
             this.userService = userService;
+            this.cryptoService = cryptoService;
         }
 
         [HttpGet]
@@ -39,7 +41,7 @@
         {
             if (Request.Cookies.ContainsKey("Role"))
             {
-                if (Request.Cookies["ROLE"].Equals(System.Text.Encoding.Default.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.Default.GetBytes("ROLE_ADMIN")))))
+                if (Request.Cookies["ROLE"].Equals(cryptoService.SHA256GetHash("ROLE_ADMIN")))
                 {
                     return View(_unitOfWork.userRepository.GetUsers());
                 }
@@ -56,7 +58,7 @@
         {
             if (Request.Cookies.ContainsKey("Role"))
             {
-                if (Request.Cookies["ROLE"].Equals(System.Text.Encoding.Default.GetString(System.Security.Cryptography.SHA256.Create().ComputeHash(System.Text.Encoding.Default.GetBytes("ROLE_ADMIN")))))
+                if (Request.Cookies["ROLE"].Equals(cryptoService.SHA256GetHash("ROLE_ADMIN")))
                 {
                     _unitOfWork.contactsRepository.RemoveRange(_unitOfWork.userRepository.GetUser(u => u.UserId == id).Contacts.AsEnumerable());
                     _unitOfWork.contactsRepository.Save();

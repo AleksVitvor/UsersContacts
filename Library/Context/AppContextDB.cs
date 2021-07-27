@@ -31,6 +31,19 @@
                         RoleName = "ROLE_ADMIN"
                     }
             });
+
+            modelBuilder.Entity<User>().HasData(
+                new User[]
+                    {
+                        new User
+                            {
+                                UserId = 1,
+                                Contacts = null,
+                                Password = "435c554a2e9cd54d2d3431b8af2b5d7ba740c64f1dca92b7af8a76b05d484ef3",
+                                RoleId = 2,
+                                Username = "admin"
+                            }
+                    });
         }
     }
 }

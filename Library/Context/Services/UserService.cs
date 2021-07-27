@@ -3,16 +3,17 @@
     using Library.Context.Models;
     using Library.FrontModels;
     using System.Linq;
-    using System.Security.Cryptography;
-    using System.Text;
 
     public class UserService : IUserService
     {
-        readonly AppContextDB context;
+        private readonly AppContextDB context;
 
-        public UserService(AppContextDB contextDB)
+        private readonly ICryptoService cryptoService;
+
+        public UserService(AppContextDB contextDB, ICryptoService cryptoService)
         {
             context = contextDB;
+            this.cryptoService = cryptoService;
         }
 
         public void Register(FrontUserForLogging userForLogging)
@@ -20,7 +21,7 @@
             var user = new User()
             {
                 Username = userForLogging.UserName,
-                Password = Encoding.Default.GetString(SHA256.Create().ComputeHash(Encoding.Default.GetBytes(userForLogging.Password))),
+                Password = cryptoService.SHA256GetHash(userForLogging.Password),
                 RoleId = 1
             };
 
@@ -31,7 +32,7 @@
         public User Auth(AuthLogin login)
         {
             return context.Users.FirstOrDefault(u => u.Username == login.UserName
-                && u.Password == Encoding.Default.GetString(SHA256.Create().ComputeHash(Encoding.Default.GetBytes(login.Password))));
+                && u.Password == cryptoService.SHA256GetHash(login.Password));
         }
 
         public void CreateContact(int userId, Contact contact)

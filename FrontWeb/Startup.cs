@@ -28,6 +28,7 @@ namespace FrontWeb
                     options.UseLazyLoadingProxies().UseSqlServer(connection));
             services.AddScoped<IUoW, UoW>();
             services.AddTransient<IUserService, UserService>();
+            services.AddSingleton<ICryptoService, CryptoService>();
             services.AddControllersWithViews();
             services.AddHttpClient();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

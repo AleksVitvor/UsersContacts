@@ -11,9 +11,12 @@
     {
         private readonly IUserService userService;
 
-        public AuthController(IUserService userService)
+        private readonly ICryptoService cryptoService;
+
+        public AuthController(IUserService userService, ICryptoService cryptoService)
         {
             this.userService = userService;
+            this.cryptoService = cryptoService;
         }
 
         [HttpGet]
@@ -60,7 +63,7 @@
             if (user != null)
             {
                 Response.Cookies.Append("ROLE",
-                    Encoding.Default.GetString(SHA256.Create().ComputeHash(Encoding.Default.GetBytes(user.Role.RoleName))));
+                    cryptoService.SHA256GetHash(user.Role.RoleName));
                 Response.Cookies.Append("Id", user.UserId.ToString());
                 return new RedirectResult("/Home/Contacts");
             }
